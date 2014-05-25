@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ma todolist</title>
+        <style>
+            a {text-decoration: none; color: black;}
+        </style>
+    </head>
+
+    <body>
+        <h1>Ma todolist</h1>
+
+        <ul>
+            <li><%= todo %></li>
+        </ul>
+        
+        <form action="/todo/modify" method="post">
+            <p>
+                <label for="newtodoname">Modifier : </label>
+                <input type="text" value=<%= id %> name="id" id="id" hidden/>
+                <input type="text" name="newtodoname" id="newtodoname" autofocus />
+                <input type="submit" value="valider"/>
+            </p>
+        </form>
+        
+        <form action="/todo/supprimer/<%= id %>" method="get">
+        	<p>
+        		<input type="submit" value="supprimer cette tache"/>
+	        </p>
+        </form>
+    </body>
+</html>
